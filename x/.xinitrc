@@ -1,0 +1,2 @@
+numlockx & 
+exec i3

@@ -1,0 +1,11 @@
+UXTerm*metaSendsEscape:true
+XTerm*metaSendsEscape:true
+! xrdb -merge .Xresources
+!UXTerm*faceName: Liberation Mono
+UXTerm*faceName: XTerm
+UXTerm*faceSize: 11
+UXTerm*antialias: false
+UXTerm*background: black
+UXTerm*foreground: white
+
+
