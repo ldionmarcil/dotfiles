@@ -146,8 +146,8 @@ bar {
 }
 
 #brightness management
-# bindcode 232 exec /home/maden/Programming/sony/brightness-down
-# bindcode 233 exec /home/maden/Programming/sony/brightness-up
+bindcode 232 exec /home/maden/Programming/sony/brightness-down
+bindcode 233 exec /home/maden/Programming/sony/brightness-up
 
 #audio management
 bindsym XF86AudioMute exec "amixer set Master playback toggle"
