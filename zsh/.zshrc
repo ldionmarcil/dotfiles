@@ -1,8 +1,11 @@
 #aliases
 alias ls='ls -la --color=auto'
 
-#config
+#imports
 autoload -U colors && colors
+autoload -U compinit && compinit
+
+#config
 PROMPT="%~%{$fg[yellow]%}%#%{$reset_color%} " #prompt format
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>' #word non-delimiter
 
