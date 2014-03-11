@@ -6,7 +6,7 @@ autoload -U colors && colors
 autoload -U compinit && compinit
 
 #config
-PROMPT="%~%{$fg[yellow]%}%#%{$reset_color%} " #prompt format
+PROMPT="[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) "
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>' #word non-delimiter
 
 #history
@@ -34,4 +34,5 @@ bindkey "^S" history-incremental-pattern-search-forward
 #jobs
 setopt NO_HUP NO_CHECK_JOBS #no HUP signal to bg jobs upon shell exit
 
-
+#make user color in prompt different for root and users
+if [ $UID -eq 0 ]; then NCOLOR="green"; else NCOLOR="white"; fi
