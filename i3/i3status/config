@@ -63,4 +63,5 @@ volume master {
 cpu_temperature 0 {
 	format = "C: %degreesC"
 	max_threshold = 70
+	path = "/home/maden/.config/temp_monitor"
 }
