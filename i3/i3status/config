@@ -45,8 +45,8 @@ tztime local {
 }
 
 load {
-        format = "%1min"
-	max_threshold = 1
+        format = "%5min"
+	max_threshold = 1.7
 }
 
 cpu_usage {
