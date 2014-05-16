@@ -146,9 +146,9 @@ bar {
 }
 
 #audio management
-# bindsym XF86AudioMute exec "amixer set Master playback toggle"
-# bindsym XF86AudioRaiseVolume exec "amixer set Master playback 3%+"
-# bindsym XF86AudioLowerVolume exec "amixer set Master playback 3%-"
+bindsym XF86AudioMute exec "amixer set Master playback toggle"
+bindsym XF86AudioRaiseVolume exec "amixer set Master playback 3%+"
+bindsym XF86AudioLowerVolume exec "amixer set Master playback 3%-"
 # bindsym XF86AudioPlay exec "mpc toggle"
 # bindsym XF86AudioStop exec "mpc stop"
 # bindsym XF86AudioPrev exec "mpc prev"
