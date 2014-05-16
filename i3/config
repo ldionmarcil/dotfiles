@@ -142,24 +142,17 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status |python2.7 /home/maden/.config/i3status/wrapper.py
+        status_command i3status |python2.7 /home/ldionmarcil/.config/i3status/wrapper.py
 }
 
-#brightness management
-bindcode 232 exec /home/maden/Programming/sony/brightness-down
-bindcode 233 exec /home/maden/Programming/sony/brightness-up
-
 #audio management
-bindsym XF86AudioMute exec "amixer set Master playback toggle"
-bindsym XF86AudioRaiseVolume exec "amixer set Master playback 3%+"
-bindsym XF86AudioLowerVolume exec "amixer set Master playback 3%-"
-bindsym XF86AudioPlay exec "mpc toggle"
-bindsym XF86AudioStop exec "mpc stop"
-bindsym XF86AudioPrev exec "mpc prev"
-bindsym XF86AudioNext exec "mpc next"
-
-# #hacky dmenu/mpc song selector
-bindsym $mod+m exec "mpc play `mpc playlist --format '[[%position% &%artist% - ]%title%]|[%position%& %file%]' |dmenu -i -l 30 | cut -f 1 -d ' '`"
+# bindsym XF86AudioMute exec "amixer set Master playback toggle"
+# bindsym XF86AudioRaiseVolume exec "amixer set Master playback 3%+"
+# bindsym XF86AudioLowerVolume exec "amixer set Master playback 3%-"
+# bindsym XF86AudioPlay exec "mpc toggle"
+# bindsym XF86AudioStop exec "mpc stop"
+# bindsym XF86AudioPrev exec "mpc prev"
+# bindsym XF86AudioNext exec "mpc next"
 
 #scratchpad
 bindsym $mod+Shift+minus move scratchpad
