@@ -46,3 +46,12 @@ then
     unfunction preexec
     PS1='$ '
 fi
+
+#removes orphan packages
+orphans() {
+  if [[ ! -n $(pacman -Qdt) ]]; then
+    echo "No orphans to remove."
+  else
+    sudo pacman -Rns $(pacman -Qdtq)
+  fi
+}
