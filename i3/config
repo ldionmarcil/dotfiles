@@ -158,6 +158,7 @@ bindsym XF86AudioLowerVolume exec "amixer set Master playback 3%-"
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+grave scratchpad show
+bindsym Print scratchpad show
 
 #lockscreen
 bindsym $mod+Shift+BackSpace exec "i3lock -c 000000"
