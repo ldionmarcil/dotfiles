@@ -54,7 +54,7 @@ cpu_usage {
 }
 
 volume master {
-    format = "V: %volume"
+    format = " :%volume"
     device = "default"
     mixer = "Master"
     mixer_idx = 0
