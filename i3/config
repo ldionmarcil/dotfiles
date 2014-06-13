@@ -116,7 +116,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec emacs
-bindsym $mod+Shift+w exec firefox
+
+# Firefox
+bindsym $mod+Shift+w exec "firefox -P Browsing -no-remote"
+bindsym $mod+Shift+p exec "firefox -P Pentest -no-remote"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
