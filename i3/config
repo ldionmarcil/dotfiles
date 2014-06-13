@@ -167,3 +167,6 @@ bindsym Print scratchpad show
 
 #lockscreen
 bindsym $mod+Shift+BackSpace exec "i3lock -c 000000"
+
+#IP information
+bindsym $mod+i exec "python3 /home/ldionmarcil/Documents/geoip/geoip.py `:|dmenu -p IP`|dmenu -l 30 -fn 'DejaVu Sans Mono-11'"
