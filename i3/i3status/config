@@ -11,27 +11,36 @@ general {
 	color_good = "#1793D0"
 	color_bad = "#990099"
 	color_degraded = "#FF6633"
-	color_separator = "#00FFFF"
         colors = true
         interval = 1
 }
-order += "ethernet enp5s0"
-order += "wireless wlp2s0"
+order += "ethernet enp0s25"
+order += "wireless wlp3s0"
+order += "disk /"
+order += "disk /home"
 order += "battery 0"
+order += "battery 1"
 order += "cpu_temperature 0"
 order += "cpu_usage"
-order += "load"
 order += "volume master"
 order += "tztime local"
 
-wireless wlp2s0 {
-        format_up = "W: %essid %quality %ip"
+disk "/" {
+     format = "/:%free"
+}
+
+disk "/home" {
+     format = "⌂:%free"
+}
+
+wireless wlp3s0 {
+        format_up = "W:%essid %quality %ip"
         format_down = ""
 }
 
-ethernet enp5s0 {
+ethernet enp0s25 {
         # if you use %speed, i3status requires the cap_net_admin capability
-        format_up = "E: %ip (%speed)"
+        format_up = "E:%ip (%speed)"
         format_down = ""
 }
 
@@ -40,13 +49,13 @@ battery 0 {
 	format_down = ""
 }
 
-tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+battery 1 {
+        format = "%status %percentage %remaining"
+	format_down = ""
 }
 
-load {
-        format = "%1min|%15min"
-	max_threshold = 1.7
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
 }
 
 cpu_usage {
@@ -54,7 +63,7 @@ cpu_usage {
 }
 
 volume master {
-    format = " :%volume"
+    format = "♫:%volume"
     device = "default"
     mixer = "Master"
     mixer_idx = 0
