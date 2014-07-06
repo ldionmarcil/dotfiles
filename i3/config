@@ -30,7 +30,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'DejaVu Sans Mono 11'
+# dmenu-xft patch required in order to get xft font support ^
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -116,7 +118,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec emacs
-bindsym $mod+Shift+w exec firefox
+
+# Firefox
+bindsym $mod+Shift+w exec "firefox -P Browsing -no-remote"
+bindsym $mod+Shift+p exec "firefox -P Pentest -no-remote"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -158,5 +163,10 @@ bindsym XF86AudioLowerVolume exec "amixer set Master playback 3%-"
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+grave scratchpad show
+bindsym Print scratchpad show
 
+#lockscreen
+bindsym $mod+Shift+BackSpace exec "i3lock -c 000000"
 
+#IP information
+bindsym $mod+i exec "python3 /home/ldionmarcil/Documents/geoip/geoip.py `:|dmenu -p IP`|dmenu -l 30 -fn 'DejaVu Sans Mono-11'"
