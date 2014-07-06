@@ -1,0 +1,3 @@
+#!/bin/bash
+# On-boot tunnels config goes here. ie:
+# autossh -f -M 20000 -q -N -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" -L 80:127.0.0.1:80 user@host
