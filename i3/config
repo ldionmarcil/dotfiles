@@ -120,8 +120,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec emacs
 
 # Firefox
-bindsym $mod+Shift+w exec "firefox -P Browsing -no-remote"
-bindsym $mod+Shift+p exec "firefox -P Pentest -no-remote"
+bindsym $mod+Shift+w exec "firefox"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
