@@ -12,6 +12,8 @@
 import os
 import sys
 import json
+from time import time
+from requests import get
 
 def get_irc_activity():
     """ Get IRC activity, implying that irc-activity is filled with data from Circe. """
@@ -34,6 +36,21 @@ def get_load_data(duration):
     time_keys = {1:0, 5:1, 15:2}
     load = os.getloadavg()[time_keys[duration]]
     return ("%s" % format(load, '.2f'), OK_COLOR if load < HIGH_THRESHOLD else HIGH_COLOR)
+
+def get_external_ip():
+    """Returns IP + changed state"""
+    global ip
+    global changed
+    if int(round(time())) % 10 == 0:
+        tmpIP = get("http://1f2e0146afb6c65f28298cdc8918784c.foobar.pw/ip.php", headers={"User-Agent":None}).text
+        changed = False if tmpIP == ip else True
+        ip = tmpIP[:]
+    return (ip, changed)
+
+def formatExternalIP():
+    ip, changed = get_external_ip()
+    return {"name":"extIP", "text": "%s" % ip, "label":"Ext:", "text_color": "#ff0000" if changed else "#8af2ea"}
+#    return {"name":"extIP", "text": ip, "label":"Ext."}
 
 def formatLoad(duration):
     load, color = get_load_data(duration)
@@ -75,7 +92,8 @@ def add_node(j, name, text, text_color="#8af2ea", label="", label_color="#1793D0
     return j
 
 def processNodes(j):
-    nodes = [{"label":"irc:", "name":"irc", "text": get_irc_activity()},
+    nodes = [formatExternalIP(),
+             {"label":"irc:", "name":"irc", "text": get_irc_activity()},
              formatLoad(1),
              formatLoad(5),
              formatLoad(15),
@@ -95,6 +113,10 @@ if __name__ == '__main__':
     print_line(read_line())
     # # The second line contains the start of the infinite array.
     print_line(read_line())
+
+    #predefine this to fill the bar
+    ip = "Obtaining"
+    changed = False
 
     while True:
         line, prefix = read_line(), ''
