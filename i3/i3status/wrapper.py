@@ -1,20 +1,5 @@
 #!/usr/bin/python2.7
 # -*- coding: utf-8 -*-
-
-# This script is a simple wrapper which prefixes each i3status line with custom
-# information. It is a python reimplementation of:
-# http://code.stapelberg.de/git/i3status/tree/contrib/wrapper.pl
-#
-# To use it, ensure your ~/.i3status.conf contains this line:
-#     output_format = "i3bar"
-# in the 'general' section.
-# Then, in your ~/.i3/config, use:
-#     status_command i3status | ~/i3status/contrib/wrapper.py
-# In the 'bar' section.
-#
-# In its current version it will display the cpu frequency governor, but you
-# are free to change it to display whatever you like, see the comment in the
-# source code below.
 #
 # © 2012 Valentin Haenel <valentin.haenel@gmx.de>
 #
