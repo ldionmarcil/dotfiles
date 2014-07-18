@@ -1,5 +1,6 @@
 #aliases
 alias ls='ls -la --color=auto'
+alias gdb='gdb -q'
 
 #imports
 autoload -U colors && colors
