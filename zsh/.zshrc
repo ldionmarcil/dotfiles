@@ -8,7 +8,7 @@ autoload -U compinit && compinit
 
 #config
 PROMPT="[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) "
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>' #word non-delimiter
+WORDCHARS='*?_-[]~=&;!#$%^(){}<>' #word non-delimiter
 
 #history
 HISTSIZE=1000
