@@ -1,5 +1,6 @@
 #aliases
 alias ls='ls -la --color=auto'
+alias grep='grep --color'
 alias gdb='gdb -q'
 
 #imports
