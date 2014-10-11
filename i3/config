@@ -146,7 +146,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status |python2.7 /home/ldionmarcil/.config/i3status/wrapper.py
+        status_command i3status |python2.7 .config/i3status/wrapper.py
 }
 
 #audio management
@@ -166,7 +166,7 @@ bindsym Print scratchpad show
 
 #lockscreen
 #bindsym $mod+Shift+BackSpace exec "i3lock -c 000000"
-bindsym $mod+Shift+BackSpace exec "/home/ldionmarcil/Documents/lock"
+bindsym $mod+Shift+BackSpace exec "Documents/lock"
 
 #IP information
 bindsym $mod+i exec "/usr/bin/python3 .i3/dmenu_geoip/geoip.py `:|dmenu -p IP`|dmenu -l 30 -fn 'DejaVu Sans Mono-11'"
