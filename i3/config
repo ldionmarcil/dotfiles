@@ -169,7 +169,7 @@ bindsym Print scratchpad show
 bindsym $mod+Shift+BackSpace exec "/home/ldionmarcil/Documents/lock"
 
 #IP information
-bindsym $mod+i exec "python3 /home/ldionmarcil/Documents/geoip/geoip.py `:|dmenu -p IP`|dmenu -l 30 -fn 'DejaVu Sans Mono-11'"
+bindsym $mod+i exec "/usr/bin/python3 .i3/dmenu_geoip/geoip.py `:|dmenu -p IP`|dmenu -l 30 -fn 'DejaVu Sans Mono-11'"
 
 #Brightness management, requires xbacklight
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
