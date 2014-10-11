@@ -171,6 +171,9 @@ bindsym $mod+Shift+BackSpace exec "Documents/lock"
 #IP information
 bindsym $mod+i exec "/usr/bin/python3 .i3/dmenu_geoip/geoip.py `:|dmenu -p IP`|dmenu -l 30 -fn 'DejaVu Sans Mono-11'"
 
+#Hextools
+bindsym $mod+u exec "/usr/bin/python3 .i3/dmenu_hex2ascii/hex2ascii.py $(printf 'Hexify\nUnhexify'|dmenu -i -p 'Action:') $(:| dmenu -p 'Data:') |dmenu -l 30 -fn 'DejaVu Sans Mono-11'"
+
 #Brightness management, requires xbacklight
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"

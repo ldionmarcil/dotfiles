@@ -12,6 +12,7 @@ ln -b -s ~/.config/dotfiles/i3/dmenu_geoip ~/.i3/
     curl -O "http://download.maxmind.com/download/geoip/database/{asnum/GeoIPASNum.dat.gz,GeoLiteCity.dat.gz}";
     gunzip {GeoLiteCity,GeoIPASNum}.dat.gz;
 )
+ln -b -s ~/.config/dotfiles/i3/dmenu_hex2ascii ~/.i3/
 
 ######### xterm #########
 ln -b -s ~/.config/dotfiles/xterm/.Xdefaults ~/.Xdefaults
