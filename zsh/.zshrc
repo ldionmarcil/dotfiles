@@ -29,6 +29,10 @@ function _history-incremental-preserving-pattern-search-backward
     zle history-incremental-pattern-search-backward
     narrow-to-region -R state
 }
+function scan_file_poodle () 
+{
+    cat $1 | while read i; do (timeout 1 openssl s_client -connect $i:443 -ssl3 2>&1 | grep "Cipher    : ") | cut -d":" -f 2| sed -e 's/^[ \t]*//' | grep -v "0000" 1>/dev/null && echo "$i vulnérable" || echo "$i pas vulnérable"; done
+}
 zle -N _history-incremental-preserving-pattern-search-backward
 bindkey "^R" _history-incremental-preserving-pattern-search-backward
 bindkey -M isearch "^R" history-incremental-pattern-search-backward
