@@ -3,6 +3,7 @@ alias ls='ls -la --color=auto'
 alias grep='grep --color'
 alias gdb='gdb -q'
 
+alias javadecompile='jad -o -r -sjava -dsrc **/*.class' #decompile java classes recursively
 #imports
 autoload -U colors && colors
 autoload -U compinit && compinit
