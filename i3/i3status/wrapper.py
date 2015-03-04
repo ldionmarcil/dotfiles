@@ -37,21 +37,6 @@ def get_load_data(duration):
     load = os.getloadavg()[time_keys[duration]]
     return ("%s" % format(load, '.2f'), OK_COLOR if load < HIGH_THRESHOLD else HIGH_COLOR)
 
-def get_external_ip():
-    """Returns IP + changed state"""
-    global ip
-    global changed
-    if int(round(time())) % 10 == 0:
-        tmpIP = get("http://1f2e0146afb6c65f28298cdc8918784c.foobar.pw/ip.php", headers={"User-Agent":None}).text
-        changed = False if tmpIP == ip else True
-        ip = tmpIP[:]
-    return (ip, changed)
-
-def formatExternalIP():
-    ip, changed = get_external_ip()
-    return {"name":"extIP", "text": "%s" % ip, "label":"Ext:", "text_color": "#ff0000" if changed else "#8af2ea"}
-#    return {"name":"extIP", "text": ip, "label":"Ext."}
-
 def formatLoad(duration):
     load, color = get_load_data(duration)
     return {"name":"load1", "text": load, "text_color": "%s" % color, "label":"%s:" % duration}
@@ -92,8 +77,7 @@ def add_node(j, name, text, text_color="#8af2ea", label="", label_color="#1793D0
     return j
 
 def processNodes(j):
-    nodes = [formatExternalIP(),
-             {"label":"irc:", "name":"irc", "text": get_irc_activity()},
+    nodes = [{"label":"irc:", "name":"irc", "text": get_irc_activity()},
              formatLoad(1),
              formatLoad(5),
              formatLoad(15),
