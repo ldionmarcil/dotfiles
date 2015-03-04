@@ -163,6 +163,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+grave scratchpad show
 bindsym Print scratchpad show
+bindsym $mod+Print border toggle
 
 #lockscreen
 #bindsym $mod+Shift+BackSpace exec "i3lock -c 000000"
