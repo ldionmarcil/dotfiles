@@ -25,7 +25,7 @@ def get_irc_activity():
             else:
                 return "-"
     except IOError:
-        return "No IRC"
+        return None
 
 
 def get_load_data(duration):
@@ -77,7 +77,8 @@ def add_node(j, name, text, text_color="#8af2ea", label="", label_color="#1793D0
     return j
 
 def processNodes(j):
-    nodes = [{"label":"irc:", "name":"irc", "text": get_irc_activity()},
+    irc_activity = get_irc_activity()
+    nodes = [{"label":"irc:", "name":"irc", "text": irc_activity} if irc_activity else None,
              formatLoad(1),
              formatLoad(5),
              formatLoad(15),
