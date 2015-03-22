@@ -13,6 +13,8 @@ ln -b -s ~/.config/dotfiles/i3/dmenu_geoip ~/.i3/
     gunzip {GeoLiteCity,GeoIPASNum}.dat.gz;
 )
 ln -b -s ~/.config/dotfiles/i3/dmenu_hex2ascii ~/.i3/
+ln -b -s ~/.config/dotfiles/i3/lock ~/Documents/lock
+chmod a+x ~/Documents/lock
 
 ######### xterm #########
 ln -b -s ~/.config/dotfiles/xterm/.Xdefaults ~/.Xdefaults

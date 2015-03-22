@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+tmpfile=$(mktemp --suffix=.png)
+scrot "$tmpfile"
+convert $tmpfile -blur 0x5 $tmpfile
+i3lock -i $tmpfile
+rm $tmpfile
