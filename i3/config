@@ -178,3 +178,6 @@ bindsym $mod+u exec "/usr/bin/python3 .i3/dmenu_hex2ascii/hex2ascii.py $(printf 
 #Brightness management, requires xbacklight
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
+
+#Borderless windows
+new_window none
