@@ -184,3 +184,8 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 #Borderless windows
 new_window none
+
+# xbk module
+bindsym $mod+Shift+s exec "ps -ef |grep xbindkeys | grep -Ev 'mouse|grep' | awk '{print $2}' | xargs kill; xbindkeys --file ~/Documents/scape/OSRS-ahk/linux/`(cd ~/Documents/scape/OSRS-ahk/linux/ && ls *xbk) | cut -d. -f 1|dmenu -l 5`.xbk"
+bindsym $mod+Shift+a exec "exec ps -ef |grep xbindkeys | grep -Ev 'mouse|grep' | awk '{print $2}' | xargs kill"
+
