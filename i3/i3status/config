@@ -9,13 +9,15 @@
 general {
 	output_format = "i3bar"
 	color_good = "#1793D0"
-	color_bad = "#990099"
+	color_bad = "#FF6633"
 	color_degraded = "#FF6633"
         colors = true
         interval = 1
 }
 order += "ethernet enp0s25"
 order += "wireless wlp3s0"
+order += "ethernet tun0"
+order += "path_exists VPN"
 order += "disk /"
 order += "disk /home"
 order += "battery 0"
@@ -42,6 +44,10 @@ ethernet enp0s25 {
         # if you use %speed, i3status requires the cap_net_admin capability
         format_up = "E:%ip (%speed)"
         format_down = ""
+}
+
+path_exists VPN {
+	path = "/proc/sys/net/ipv4/conf/tun0"
 }
 
 battery 0 {
