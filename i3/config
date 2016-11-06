@@ -122,7 +122,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec emacs
 
 # Firefox
-bindsym $mod+Shift+w exec "firefox"
+bindsym $mod+Shift+w exec "chromium"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
