@@ -39,16 +39,16 @@ def get_load_data(duration):
 
 def formatLoad(duration):
     load, color = get_load_data(duration)
-    return {"name":"load1", "text": load, "text_color": "%s" % color, "label":"%s:" % duration}
+    return {"name":"load1", "text": load, "text_color": "%s" % color, "label":"%s" % duration}
 
 def formatNetwork(networkNodeList):
     node = networkNodeList[0]
     full_text = node["full_text"]
     if full_text != "": # only process displayed interfaces
-        tokenized_text = full_text.split(":")
+        tokenized_text = [full_text[:1], full_text[1:]]
         interface_type = tokenized_text[0]
         interface_details = " ".join(tokenized_text[-1:])
-        return {"name":"network", "text": interface_details, "label":"%s:" % interface_type}
+        return {"name":"network", "text": interface_details, "label":"%s" % interface_type}
     return None
 
 def print_line(message):
@@ -78,7 +78,7 @@ def add_node(j, name, text, text_color="#8af2ea", label="", label_color="#1793D0
 
 def processNodes(j):
     irc_activity = get_irc_activity()
-    nodes = [{"label":"irc:", "name":"irc", "text": irc_activity} if irc_activity else None,
+    nodes = [{"label":"irc", "name":"irc", "text": irc_activity} if irc_activity else None,
              formatLoad(1),
              formatLoad(5),
              formatLoad(15),
