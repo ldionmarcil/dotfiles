@@ -6,6 +6,7 @@ UXTerm*faceName: XTerm
 UXTerm*faceSize: 12
 UXTerm*antialias: true
 UXTerm*background: black
-UXTerm*foreground: white
+UXTerm*foreground: #cccccc
+
 
 
