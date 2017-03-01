@@ -41,8 +41,7 @@ wireless wlp3s0 {
 }
 
 ethernet enp0s25 {
-        # if you use %speed, i3status requires the cap_net_admin capability
-        format_up = "💻%ip (%speed)"
+        format_up = "💻%ip"
         format_down = ""
 }
 
