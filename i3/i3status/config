@@ -10,7 +10,7 @@ general {
 	output_format = "i3bar"
 	color_good = "#1793D0"
 	color_bad = "#FF6633"
-	color_degraded = "#FF6633"
+	color_degraded = "#6e8b3d"
         colors = true
         interval = 1
 }
@@ -28,36 +28,44 @@ order += "volume master"
 order += "tztime local"
 
 disk "/" {
-     format = "/:%free"
+     format = "/%free"
 }
 
 disk "/home" {
-     format = "⌂:%free"
+     format = "🏠%free"
 }
 
 wireless wlp3s0 {
-        format_up = "W:%essid %quality %ip"
+        format_up = "📶%essid %quality %ip"
         format_down = ""
 }
 
 ethernet enp0s25 {
         # if you use %speed, i3status requires the cap_net_admin capability
-        format_up = "E:%ip (%speed)"
+        format_up = "💻%ip (%speed)"
         format_down = ""
 }
 
 path_exists VPN {
 	path = "/proc/sys/net/ipv4/conf/tun0"
+	format = "VPN✓"
+	format_down = " "
 }
 
 battery 0 {
         format = "%status %percentage %remaining"
 	format_down = ""
+	status_chr = "🔌"
+        status_bat = "🔋"
+        status_full = "⚡"
 }
 
 battery 1 {
         format = "%status %percentage %remaining"
 	format_down = ""
+	status_chr = "🔌"
+        status_bat = "🔋"
+        status_full = "⚡"
 }
 
 tztime local {
@@ -69,14 +77,14 @@ cpu_usage {
 }
 
 volume master {
-    format = "♫:%volume"
+    format = "♫%volume"
     device = "default"
     mixer = "Master"
     mixer_idx = 0
 }
 
 cpu_temperature 0 {
-	format = "C: %degreesC"
+	format = "🌡%degreesC"
 	max_threshold = 70
 	path = "/home/ldionmarcil/.config/temp_monitor"
 }
