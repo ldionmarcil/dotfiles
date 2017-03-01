@@ -20,6 +20,9 @@ set $mod Mod4
 # chose a FreeType font, such as:
 font pango:DejaVu Sans Mono 11
 
+client.focused          #000000 #6e8b3d #ffffff #2e9ef4   #285577
+client.unfocused 	#333333 #222222 #cccccc #292d2e   #222222
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -149,6 +152,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status |python2.7 .config/i3status/wrapper.py
+	colors {
+	       focused_workspace  #555555 #6e8b3d #ffffff
+	}
 }
 
 #audio management
