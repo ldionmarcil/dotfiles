@@ -4,12 +4,26 @@ alias grep='grep --color'
 alias gdb='gdb -q'
 
 alias javadecompile='jad -o -r -sjava -dsrc **/*.class' #decompile java classes recursively
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dps="docker ps -a"
+alias d="docker"
+function dshell() {
+    sudo docker exec  -it "$1" bash
+}
+
+alias startkali() {
+    VBoxManage startvm kali --type headless && VBoxManage guestproperty get kali "/VirtualBox/GuestInfo/Net/0/V4/IP"
+}
+alias stopkali() {
+    VBoxManage controlvm kali poweroff
+}
+
 #imports
 autoload -U colors && colors
 autoload -U compinit && compinit
 
 #config
-PROMPT="[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) "
+PROMPT="[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%m:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) "
 WORDCHARS='*?_-[]~=&;!#$%^(){}<>' #word non-delimiter
 
 #history
@@ -69,3 +83,6 @@ PERL5LIB="/home/ldionmarcil/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PER
 PERL_LOCAL_LIB_ROOT="/home/ldionmarcil/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/ldionmarcil/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ldionmarcil/perl5"; export PERL_MM_OPT;
+
+
+

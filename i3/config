@@ -18,7 +18,7 @@ set $mod Mod4
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:DejaVu Sans Mono 11
+font pango:Monospace 12
 
 client.focused          #000000 #6e8b3d #ffffff #2e9ef4   #285577
 client.unfocused 	#333333 #222222 #cccccc #292d2e   #222222
@@ -124,9 +124,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec emacs
 
-# Firefox
+# Browser
 bindsym $mod+Shift+w exec "chromium"
-
+bindsym $mod+c [class="(?i)chromium"] focus
+bindsym $mod+q [class="(?i)emacs"] focus
+bindsym $mod+b [class="(?i)burp-StartBurp"] focus
+bindsym $mod+m [class="(?i)Spotify"] focus
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode

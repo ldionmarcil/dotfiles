@@ -84,6 +84,6 @@ volume master {
 
 cpu_temperature 0 {
 	format = "🌡%degreesC"
-	max_threshold = 70
-	path = "/home/ldionmarcil/.config/temp_monitor"
+	max_threshold = 75
+	path = "/home/user/.config/temp_monitor"
 }

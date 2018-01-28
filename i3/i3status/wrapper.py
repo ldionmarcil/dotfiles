@@ -23,7 +23,7 @@ def get_irc_activity():
             if len(lines) > 0:
                 return lines[0].strip().replace("[", "").replace("]", "").replace(",", " ")
             else:
-                return "-"
+                return ""
     except IOError:
         return None
 
@@ -32,7 +32,7 @@ def get_load_data(duration):
     """Returns the load + color associated with the range"""
     OK_COLOR = "#8af2ea"
     HIGH_COLOR = "#ff0000"
-    HIGH_THRESHOLD = 1 # if higher than this, load is HIGH
+    HIGH_THRESHOLD = 3 # if higher than this, load is HIGH
     time_keys = {1:0, 5:1, 15:2}
     load = os.getloadavg()[time_keys[duration]]
     return ("%s" % format(load, '.2f'), OK_COLOR if load < HIGH_THRESHOLD else HIGH_COLOR)
@@ -78,7 +78,7 @@ def add_node(j, name, text, text_color="#8af2ea", label="", label_color="#1793D0
 
 def processNodes(j):
     irc_activity = get_irc_activity()
-    nodes = [{"label":"irc", "name":"irc", "text": irc_activity} if irc_activity else None,
+    nodes = [{"label":"", "name":"irc", "text_color" : "#f00", "text": irc_activity} if irc_activity else None,
              formatLoad(1),
              formatLoad(5),
              formatLoad(15),

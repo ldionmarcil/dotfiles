@@ -1,12 +1,33 @@
 UXTerm*metaSendsEscape:true
 XTerm*metaSendsEscape:true
 ! xrdb -merge .Xresources
-!UXTerm*faceName: Liberation Mono
-UXTerm*faceName: XTerm
-UXTerm*faceSize: 12
+UXTerm*faceName: Ubuntu Mono
+!UXTerm*faceName: XTerm
+UXTerm*faceSize: 16
 UXTerm*antialias: true
 UXTerm*background: black
 UXTerm*foreground: #cccccc
+UXTerm*termName: xterm-256color
+*.multiClickTime: 100
 
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+
+
+UXTerm*eightBitInput:        false
+UXTerm*metaSendsEscape:      true
+UXTerm*backarrowKey:         false
+UXTerm*modifier:             met
+
+*ttyModes:         erase ^?
+*VT100.Translations: \
+        #override <Key>BackSpace: string(0x7f) \n\
+		  <Key>Delete:    string(0x1b) string("[3~") \n\
+		  <Key>Home:      string("\033[1~") \n\
+		  <Key>End:       string("\033[4~")
 
 
